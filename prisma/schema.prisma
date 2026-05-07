@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client"
+  output   = "./prisma-output"
+  moduleFormat = "cjs"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id Int @default(autoincrement()) @id
+  user_name String @unique
+  email String @unique
+
+  @@map("users")
+}
